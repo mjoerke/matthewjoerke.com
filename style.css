@@ -138,9 +138,9 @@ strong {
 
 .section:hover {
 	background-image: linear-gradient(to right, rgba(255,255,0,0.8) 0%, rgba(255,255,0,0.8) 100%);
-	background-position: 0px 16px;
+	background-position: 0px 1em;
 	background-repeat: repeat-x;
-	background-size: 4px 5px;
+	/*background-size: 4px 5px;*/
 }
 
 .title {
@@ -162,7 +162,7 @@ a > .nav:hover {
 	background-image: linear-gradient(to right, rgba(255,255,0,0.8) 0%, rgba(255,255,0,0.8) 100%);
 	background-position: 0px 13px;
 	background-repeat: repeat-x;
-	background-size: 6px 5px;
+	/*background-size: 6px 5px;*/
 	color: black;
 }
 
@@ -170,7 +170,7 @@ a > .nav-aui:hover {
 	background-image: linear-gradient(to right, #48ffa4 0%, #48ffa4 100%);
 	background-position: 0px 13px;
 	background-repeat: repeat-x;
-	background-size: 6px 5px;
+	/*background-size: 6px 5px;*/
 	color: black;
 }
 
@@ -236,30 +236,30 @@ hr {
 
 .bodyLink {
 	background-image: linear-gradient(to right, rgba(128,128,128,0.3) 50%, rgba(128,128,128,0.3) 100%);
-	background-position: 0 14px;
+	background-position: 0 0.9em;
 	background-repeat: repeat-x;
-	background-size: 4px 5px;
+	/*background-size: 4px 5px;*/
 }
 
 .bodyLink:hover {
 	background-image: linear-gradient(to right, rgba(255,255,0,0.8) 0%, rgba(255,255,0,0.8) 100%);
-	background-position: 0 14px;
+	background-position: 0 0.9em;
 	background-repeat: repeat-x;
-	background-size: 4px 5px;
+	/*background-size: 4px 5px;*/
 }
 
 .auiLink {
 	background-image: linear-gradient(to right, rgba(128,128,128,0.3) 50%, rgba(128,128,128,0.3) 100%);
-	background-position: 0 14px;
+	background-position: 0 0.9em;
 	background-repeat: repeat-x;
-	background-size: 4px 5px;
+	/*background-size: 4px 5px;*/
 }
 
 .auiLink:hover {
 	background-image: linear-gradient(to right, #48ffa4 0%, #48ffa4 100%);
-	background-position: 0 14px;
+	background-position: 0 0.9em;
 	background-repeat: repeat-x;
-	background-size: 4px 5px;
+	/*background-size: 4px 5px;*/
 }
 
 /*.bodyLinkDotted {
@@ -296,9 +296,7 @@ hr {
 .gridSubtitle {
 	font-size: 12px;
 	font-family: 'Bandeins Sans Variable', sans-serif;
-	color: rgba(128, 128, 128, 1);
-	font-style: italic;
-}
+	color: rgba(128, 128, 128, 1);}
 
 .tileBackground {
 	opacity: 0.75;

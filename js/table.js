@@ -1,6 +1,6 @@
 var canvas = document.getElementById('myCanvas');
-paper.setup(canvas);
-paper.install(window)
+var ctx = canvas.getContext("2d");
+var render = false;
 
 // make sure Google fonts are loaded before rendering
 WebFont.load({
@@ -10,7 +10,30 @@ WebFont.load({
     active: draw
 });
 
+
+if (window.innerWidth > 1000) {
+	canvas.width = 940;
+	canvas.height = 550
+	render = true;
+} else {
+	canvas.width = 500;
+	canvas.height = 200;
+}
+
+paper.setup(canvas);
+paper.install(window)
+
 function draw() {
+
+	if (!render) {
+		ctx.textAlign = "center";
+		console.log("filling")
+		ctx.font = "15px Arial"
+		ctx.fillColor = 'black'
+		ctx.fillText("Table not optimized for mobile devices.\n Please view on mobile. ", 250, 100);
+		return
+	}
+
 	// Constants
 	const titleMargin = 35
 	const rowMargin = 20
