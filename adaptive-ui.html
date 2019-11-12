@@ -4,101 +4,313 @@
 	<meta charset='utf8'>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Matthew Jörke – Adaptive User Interfaces</title>
-	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,300i&display=swap" rel="stylesheet">
-	</script>
-	<script type="text/javascript" 
-			src="js/macy.min.js">
-	</script>
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,300i,400,400i,700,700i&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.2/paper-core.min.js" defer></script>
 	<script type="text/javascript" src='js/content.js' defer></script>
+	<script type="text/javascript" src='js/table.js' defer></script>
 </head>
+
 <body>
-	<div class='container'>
-		<a href="index.html">
-			<div class="backPane"></div>
-		</a>
-		
-		<div class='content'>
-			<div class="contentRow">
-				<div class='title'>
-					<span class='sans' style='color: #48ffa4'>
+	<div class='row'>
+		<div class='content text'>
+			<div class='title'>
+				<a href="https://ig.hfg-gmuend.de/projects/adaptive-user-interface">
+					<span class='sans'>
 						Adaptive User Interfaces
 					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class='row pad40'>
+		<div class='content text navbar'>
+			<a href='index.html'>
+				<span class='strange-light stretchable nav nav-aui'>H<span class='var'>o</span>me</span>
+			</a>
+			\
+			<a href='index.html#grid'>
+				<span class='strange-light stretchable nav nav-aui'>Pr<span class='var'>o</span>ject<span class='sans-light'>s</span></span>
+			</a>
+			\
+			<span class='sans-light stretchable nav'>Interaction Design</span>
+		</div>
+	</div>
+
+	<!-- <div class='row pad20'>
+		<div class='content text'>
+			<span class='bracketLink'>
+				<a href="http://adaptive-ui.com/">adaptive-ui.com</a>
+			</span>
+		</div>
+	</div> -->
+	<div class='row pad40'>
+		<div class='content video'>
+			<div class='videoContainer'>
+				<div style="padding:56.25% 0 0 0;position:relative;">
+					<iframe src="https://player.vimeo.com/video/370391581?color=48ffa4&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 				</div>
-				<span class='bracketLink'>
-					<a href="http://adaptive-ui.com/">adaptive-ui.com</a>
+				<script src="https://player.vimeo.com/api/player.js"></script>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row pad20">
+		<div class='content text'>
+			This project was completed in collaboration with 
+			<a class='auiLink' href="mailto:hirt.corinna@gmx.de">Corinna Hirt</a> and
+			<a class='auiLink' href="mailto:kalle.r.reiter@hfg-gmuend.de">Kalle Reiter</a>
+			at the <a class='auiLink' href="https://www.hfg-gmuend.de">HfG Schwäbisch Gmünd</a>.
+			The aim of the course (Invention Design, 
+			<a class='auiLink' href="https://www.hfg-gmuend.de/en/Prof._Joerg_Beck.html">Prof. Jörg Beck</a>) is to research future-focused technologies and design for interactions that may arise when these technologies mature. An emphasis was placed on anticipating the societal impact of these technologies and accounting for potential pitfalls in our designs. For this project, Kalle, Corinna, and I decided to research artifical intelligence and machine learning technologies.
+
+			<!-- Artificially intelligent software is already common-place; neural networks analyze our emails and credit card statements, come pre-installed on most smartphones, and have even begun to permeate into medical and legal decision-making. These algorithms are both powerful and dangerous, particularly when the researchers that built them don't know exactly how they makes predictions. Unlike humans, algorithms cannot explain themselves. 
+			<br> <br>
+			More insidiously, artificially intelligent systems are used to mine our opinions and influence our behavior–usually with the objective to maximize profit or user engagement–without the necessary foresight. In huge populations, slight changes in behavior and opinions can have enormous, unpredictable consequences. Research indicates that these "intelligent" systems are eroding our attention spans, mental health, and democratic values [<a class='auiLink' href="https://ledger.humanetech.com/">Center for Human Technology</a>].
+			<br> <br> -->
+			Our project converged around the concept of adaptive user interfaces. 
+			<blockquote>
+				An <strong>Adaptive User Interface (AUI)</strong> is a user interface that dynamically adjusts its layout, elements, functionality, and/or content to a given user's needs, capabilities, and context of use.
+			</blockquote>
+		</div>
+	</div>
+
+	<div class='row pad20'>
+		<div class='content text'>
+			<hr>
+		</div>
+	</div> 
+
+	<div class='row pad20'>
+		<div class='content text'>
+			<div class='caption-big'>
+				Human-to-human interaction is characterized by bidirectional perception and reaction.
+			</div>
+		</div>
+	</div>
+
+	<div class='row pad40'>
+		<div class='content img'>
+			<a href="http://adaptive-ui.com/">
+				<img src='img/aui/human-to-human.png'>
+			</a>
+		</div>
+	</div>
+
+	<div class='row pad40'>
+		<div class='content text'>
+			<div class='caption-big'>
+				Human-computer-interaction is constrained by the computer's inability to perceive a user.
+			</div>
+		</div>
+	</div>
+
+	
+	<div class='row pad40'>
+		<div class='content img'>
+			<a href="http://adaptive-ui.com/">
+				<img src='img/aui/human-to-computer.png'>
+			</a>
+		</div>
+	</div>
+
+	<div class="row pad20">
+		<div class='content text'>
+			With advances in sensor technologies and machine learning algorithms, computers are becoming more and more capable of interpreting human emotions and behaviors. With this in mind, we asked ourselves,
+			<ul>
+				<li>How might we design systems to have empathy for a user's emotions and wellbeing?</li>
+				<li>How might we design systems to intelligently interpret and react to human behavior along human dimensions?</li>
+				<li>What if human-computer interaction were as rich and meaningful as human-to-human interaction?</li>
+			</ul>
+
+			The project has two compontents:
+			<ol>
+				<li>a <a class='auiLink' href="#website">website</a> outlining our research and design guidelines</li>
+				<li>an interactive <a class='auiLink' href="#mirror">smart-mirror</a> installation</li>
+			</ol>
+		</div>
+	</div>
+
+	<div class='row pad40'>
+		<div class='content text'>
+			<hr>
+		</div>
+	</div>
+	<div class='row pad20'>
+		<div class='content text'>
+			<div class='caption-big'>
+				Which kinds of information can an adaptive UI capture? <br>
+				How can these parameters be constructed from sensor data? <br>
+			</div>
+		</div>
+	</div>
+
+	<div class='row'>
+		<div class='content'>
+			<canvas id="myCanvas" style="-webkit-user-drag: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 940px; height: 550px;"></canvas>
+		</div>
+	</div>
+	<div class='row pad20'>
+		<div class='content text'>
+			<div class='caption-small'>
+				<strong>Disclaimer: </strong> This table is not based on peer-reviewed research nor does it reflect the accuracy and reliability of each algorithm. It is intended for exploratory and demonstrational purposes. 
+			</div>
+		</div>
+	</div>
+
+	<div class='row pad20'>
+		<div class='content text'>
+			<hr>
+		</div>
+	</div>
+
+	<div class='row'>
+		<div class='content text'>
+			<div class='subtitle' id='website'>
+				<span class='sans'>
+					Website
 				</span>
 			</div>
-			
-			<div class="contentRow">
-				<img src='img/aui/big_splash.png'></img>
-			</div>
-			<div class="contentRow">
-				<div class='text'>
-					This project was completed in collaboration with 
-					<a class='auiLink' href="mailto:hirt.corinna@gmx.de">Corinna Hirt</a> and
-					<a class='auiLink' href="mailto:kalle.r.reiter@hfg-gmuend.de">Kalle Reiter</a>
-					at the <a class='auiLink' href="https://www.hfg-gmuend.de">HfG Schwäbisch Gmünd</a>.
-					The aim of the course (Invention Design, 
-					<a class='auiLink' href="https://www.hfg-gmuend.de/en/Prof._Joerg_Beck.html">Prof. Jörg Beck</a>) is to research future-focused technologies and design for interactions that may arise when these technologies mature. An emphasis was placed on anticipating the societal impact of these technologies and accounting for potential pitfalls in our designs. For this project, Kalle, Corinna, and I decided to research artifical intelligence and machine learning technologies.
-
-					<div class='sectionDivider'>
-						<span class='sans'>
-							~
-						</span>
-					</div>
-					<!-- Artificially intelligent software is already common-place; neural networks analyze our emails and credit card statements, come pre-installed on most smartphones, and have even begun to permeate into medical and legal decision-making. These algorithms are both powerful and dangerous, particularly when the researchers that built them don't know exactly how they makes predictions. Unlike humans, algorithms cannot explain themselves. 
-					<br> <br>
-					More insidiously, artificially intelligent systems are used to mine our opinions and influence our behavior–usually with the objective to maximize profit or user engagement–without the necessary foresight. In huge populations, slight changes in behavior and opinions can have enormous, unpredictable consequences. Research indicates that these "intelligent" systems are eroding our attention spans, mental health, and democratic values [<a class='auiLink' href="https://ledger.humanetech.com/">Center for Human Technology</a>].
-					<br> <br> -->
-					Our project converged around the concept of adaptive user interfaces. 
-					<blockquote>
-						An <strong>Adaptive User Interface (AUI)</strong> is a user interface that dynamically adjusts its layout, elements, functionality, and/or content to a given user's needs, capabilities, and context of use.
-					</blockquote>
-					With advances in sensor technologies and machine learnign algorithms, computers are becoming more and more capable of interpreting human emotions and behaviors. With this in mind, we asked ourselves,
-					<ul>
-						<li>How might we design systems to have empathy for a user's emotions and wellbeing?</li>
-						<li>How might we design systems to intelligently interpret and react to human behavior along human dimensions?</li>
-						<li>What if human-computer interaction were as rich and fullfulling as human-to-human interaction?</li>
-					</ul>
-
-					The project has two compontents:
-					<ol>
-						<li>an interactive "smart-mirror" installation</li>
-						<li>a demo website outlining our research and design guidelines</li>
-					</ol>
-				</div>
-			</div>
-			<div class="contentRow">
-				<div class='subtitle'>
-					<span class='sans' style='color: #48ffa4'>
-						Smart Mirror
-					</span>
-				</div>
-			</div>
-			<div class="contentRow">
-				<img src='img/aui/mirror/mirror1.jpg'></img>
-			</div>
-			<div class="contentRow">
-				<img src='img/aui/mirror/mirror2.jpg'></img>
-			</div>
-			<div class="contentRow">
-				<img src='img/aui/mirror/dev1.jpg'></img>
-			</div>
-			<div class="contentRow">
-				<img src='img/aui/mirror/parts1.jpg' style='width: 48%; margin-right: 3%; display: inline-block;'></img>
-				<img src='img/aui/mirror/parts2.jpg' style='width: 48%'></img>
-			</div>
-			
 		</div>
-		</div>
-
 	</div>
-	<div class='row'>
-		<div class="gutter">
+	<div class='row pad20'>
+		<div class='content text'>
+			<span class='bracketLink aui'>
+				<a href="http://adaptive-ui.com/">adaptive-ui.com</a>
+			</span>
 		</div>
+	</div>
+
+	<div class='row'>
+		<div class='content img'>
+			<a href="http://adaptive-ui.com/">
+				<img src='img/aui/screenshot.png'>
+			</a>
+		</div>
+	</div>
+
+	<div class='row pad40'>
+		<div class='content text'>
+			The website outlines our findings and serves as a digital documentation for our project. We outline the design potential and the dangers of adaptive UIs, as well as a technical description of how such a system could work. During the exhibition, it was displayed alongside our mirror for visitors who wanted to learn more about AUIs. 
+		</div>
+	</div>   
+
+	<div class='row pad20'>
+		<div class='content text'>
+			<hr>
+		</div>
+	</div> 
+
+	<div class='row'>
+		<div class='content text'>
+			<div class='caption-big'>
+				How might an AUI adapt to differences in distance?
+			</div>
+		</div>
+	</div>
+
+	<div class='row pad20'>
+		<div class='content img'>
+			<a href="http://adaptive-ui.com/">
+				<img src='img/aui/UserDistance.gif'>
+			</a>
+		</div>
+	</div>
+
+	<div class='row'>
+		<div class='content text'>
+			<div class='caption-big'>
+				How might an AUI adapt to differences in size?
+			</div>
+		</div>
+	</div>
+
+	<div class='row'>
+		<div class='content img'>
+			<a href="http://adaptive-ui.com/">
+				<img src='img/aui/UserSize.gif'>
+			</a>
+		</div>
+	</div>
+
+	<div class='row pad20'>
+		<div class='content text'>
+			<hr>
+		</div>
+	</div>
+
+	<div class='row pad'>
+		<div class='content text'>
+			<div class='subtitle' id='mirror'>
+				<span class='sans'>
+					Smart Mirror
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div class='row pad20'>
+		<div class='content text'>
+			<span class='bracketLink aui'>
+				<a href="https://github.com/mjoerke/AUI-Smart-Mirror/tree/master">source code</a>
+			</span>
+
+			<span class='bracketLink aui'>
+				<a href="https://vimeo.com/370391581">demo video</a>
+			</span>
+		</div>
+	</div>
+
+	<div class='row pad40'>
+		<div class='content text'>
+			The smart mirror was displayed at the HfG Schwäbisch Gmünd semester exhibition. Our mirror was designed to playfully and intuitively communicate the present capabilities of machine perception to the general public and provoke critical discussion thereof. Capable of facial recognition, facial keypoint tracking, and emotion recognition, the mirror could recognize past visitors, estimate a user’s age and gender, and display facial features and emotional cues in real-time. 
+		</div>
+	</div>   
+
+
+	<div class='row'>
+		<div class='content img'>
+			<img src='img/aui/mirror/mockup-v-prototype.png'>
+		</div>
+	</div>
+
+	<div class='row pad40'>
+		<div class='content text'>
+			<div class='caption'>
+				Mockup mirror design (left), Screenshot of real prototype (right)
+			</div>
+		</div>
+	</div>
+
+	<div class='row'>
+		<div class='content img'>
+			<img src='img/aui/mirror/mirror1.jpg'>
+		</div>
+	</div>
+
+	<div class='row'>
+		<div class='content img'>
+			<img src='img/aui/mirror/mirror2.jpg'>
+		</div>
+	</div>
+
+	<div class='row pad20'>
+		<div class='content text'>
+			<div class='caption'>
+				Displaying our smart mirror at the HfG's exhibition.
+			</div>
+		</div>
+	</div>
+
+	
+
+	<div class='row'>
 		<div class='content text' id='attr'>
 			© Matthew Jörke, 2019
 		</div>
 	</div>
 </body>
+
 </html>

@@ -15,10 +15,8 @@
 	<script type="text/javascript" src='js/index.js' defer></script>
 </head>
 <body>
-	<div class='row' id='firstRow'>
-		<div class="gutter">
-		</div>
-		<div class='content'>
+	<div class='row'>
+		<div class='content text'>
 			<div class='title'>
 				<span class='stretchable'>
 					<span class='strange'>Matthew J<span class='var'>ö</span>rke</span>
@@ -26,10 +24,9 @@
 			</div>
 		</div>
 	</div>
-	<div class='row' id='links'>
-		<div class="gutter">
-		</div>
-		<div class='content'>
+
+	<div class='row pad40'>
+		<div class='content text'>
 			<span class='bracketLink'>
 				<a href="mailto:matthewjoerke@gmail.com">email</a>
 			</span>
@@ -44,66 +41,98 @@
 			</span>
 		</div>
 	</div>
-	<div class='row'>
-		<div class="gutter">
-			<a href='about.html'>
-				<span class='strange stretchable nav'>A<span class='var'>B</span>OUT</span>
-			</a>
-		</div>
+
+	<div class='row pad10'>
+		<a href='about.html' class='content text'>
+			<span class='strange stretchable section'>A<span class='var'>B</span>OUT</span>
+		</a>
+	</div>
+	<div class='row pad40'>
 		<div class='content text' id='introText'>
 			I'm an undergraduate student at <a class='bodyLink' href="https://www.berkeley.edu">UC Berkeley</a>, studying 
 			Computer Science and Cognitive Science. 
 			I just returned from the <a class='bodyLink' href="https://www.hfg-gmuend.de">HfG Schwäbisch Gmünd</a> in Germany, where I completed an exchange semester in <a class='bodyLink' href="https://www.design-studieren-hfg.de/bachelor/interaktionsgestaltung/">Interaction Design</a>. 
 			<br> <br>
-			I am currently doing research in the <a class='bodyLink' href="https://ischool.berkeley.edu">School of Information</a> with <a class='bodyLink' href="http://people.ischool.berkeley.edu/~dbamman/">David Bamman</a> and <a class='bodyLink' href="https://www.jongillick.com">Jon Gillick</a>, working on transfer learning for natural language processing and on music information retrieval. Previously, I worked with <a class='bodyLink' href="http://cearto.com/">César Torres</a> in the <a class='bodyLink' href="http://www.hybrid-ecologies.org">Hybrid Ecologies Lab</a> on human-computer interaction, where we charactized tacit knowledge in creative processes using time-series clustering. 
-			<br> <br>
-			→ <a class='bodyLink' href="about.html">Read more</a>
+			I am currently doing research in the <a class='bodyLink' href="https://ischool.berkeley.edu">School of Information</a> with <a class='bodyLink' href="http://people.ischool.berkeley.edu/~dbamman/">David Bamman</a> and <a class='bodyLink' href="https://www.jongillick.com">Jon Gillick</a>, working on transfer learning for natural language processing. Previously, I worked with <a class='bodyLink' href="http://cearto.com/">César Torres</a> in the <a class='bodyLink' href="http://www.hybrid-ecologies.org">Hybrid Ecologies Lab</a> on human-computer interaction, where we charactized tacit knowledge in creative processes using time-series clustering. 
+			<!-- → <a class='bodyLink' href="about.html">Read more</a> -->
 		</div>
 	</div>
+
+	<div class='row pad10'>
+		<a href='#' class='content text'>
+			<span class='strange stretchable section'>PROJ<span class='var'>E</span>CTS</span>
+		</a>
+	</div>
+
 	<div class='row'>
-		<div class="gutter">
-			<span class='strange stretchable nav'>PROJ<span class='var'>E</span>CTS</span>
-		</div>
-		<div class='content' id='grid'>
-			<a href="adaptive-ui.html">
-				<div class='gridItem'>
-					<img src="img/tiles/aui_tile.png" class='tileBackground'>
-				</div>
-			</a>
-			<a href="http://www.hybrid-ecologies.org/projects/34-hybrid-microgenetic-analysis" data-turbolinks="false">
-				<div class='gridItem'>
-					<img src="img/tiles/hybrid_mga_tile.png" class='tileBackground'>
-				</div>
-			</a>
-			
-			<a href="logreg-info-theory.html">
-				<div class='gridItem'>
-					<img src="img/tiles/logreg_tile.png" class='tileBackground'>
-				</div>
-			</a>
-			
-			<a href="freeform-modeling.html">
-				<div class='gridItem'>
-					<img src="img/tiles/freeform_tile.png" class='tileBackground'>
-				</div>
-			</a>
+		<div class='content'>
+			<div id='grid'>
+				<a href="adaptive-ui.html">
+					<div class='gridItem'>
+						<div class='gridLabel'>
+							<div class='gridTitle'>Adaptive UIs</div>
+							<div class='gridSubtitle'>HfG Schwäbisch Gmünd, 2019</div>
+						</div>
+						<img src="img/tiles/aui_tile.png" class='tileBackground'>
+					</div>
+				</a>
 
-			<a href="clout-rank.html">
-				<div class='gridItem'>
-					<img src="img/tiles/cloutrank_tile.png" class='tileBackground'>
-				</div>
-			</a>
+				<a href="http://www.hybrid-ecologies.org/projects/34-hybrid-microgenetic-analysis" data-turbolinks="false">
+					<div class='gridItem'>
+						<img src="img/tiles/hybrid_mga_tile.png" class='tileBackground'>
+						<div class='gridLabel'>
+							<div class='gridTitle'>Hybrid Microgenetic Analysis</div>
+							<div class='gridSubtitle'>Creativity & Cognition 2019</div>
+							<div class='gridCaption'></div>
+						</div>
+						
+					</div>
+				</a>
 
-			<a href="momento.html">
-				<div class='gridItem'>
-					<img src="img/tiles/momento_tile.png" class='tileBackground'>
-				</div>
-			</a>
+				<a href="freeform-modeling.html">
+					<div class='gridItem'>
+						<div class='gridLabel'>
+							<div class='gridTitle'>Freeform Modeling Workshop</div>
+							<div class='gridSubtitle'>HfG Schwäbisch Gmünd, 2019</div>
+						</div>
+						<img src="img/tiles/freeform_tile.png" class='tileBackground'>
+					</div>
+				</a>
+
+				<a href="logreg-info-theory.html">
+					<div class='gridItem'>
+						<img src="img/tiles/logreg_tile.png" class='tileBackground'>
+						<div class='gridLabel'>
+							<div class='gridTitle'>Logistic Regression & Information Theory</div>
+							<div class='gridSubtitle'>UC Berkeley, 2018</div>
+						</div>
+					</div>
+				</a>
+				
+				<a href="files/Project_Report_EECS126.pdf">
+					<div class='gridItem'>
+						<img src="img/tiles/billboard_tile.png" class='tileBackground'>
+						<div class='gridLabel'>
+							<div class='gridTitle'>PageRank on Billboard & Spotify Data</div>
+							<div class='gridSubtitle'>UC Berkeley, 2018</div>
+						</div>
+					</div>
+				</a>
+
+				<a href="https://medium.com/@sbudker/a-new-way-to-travel-momento-d7c54593f936">
+					<div class='gridItem'>
+						<div class='gridLabel'>
+							<div class='gridTitle'>Momento</div>
+							<div class='gridSubtitle'>UC Berkeley, 2017</div>
+						</div>
+						<img src="img/tiles/momento_tile.png" class='tileBackground'>
+					</div>
+				</a>
+			</div>
 		</div>
 	</div>
+
 	<div class='row'>
-		<div class="gutter">
-		</div>
 		<div class='content text' id='attr'>
 			© Matthew Jörke, 2019
 		</div>
