@@ -1,50 +1,85 @@
-function toggle(el, cls) {
-	if (!el.classList.contains(cls)) {
-		el.classList.add(cls)
+/* STRETCH ANIMATION  */
+
+var isTouchDevice = 'ontouchstart' in window
+var stretchables = document.getElementsByClassName('stretchable')
+
+for (var i = 0; i < stretchables.length; i++) {
+	if (isTouchDevice) {
+		stretchables[i].addEventListener('click', function () {
+			var el = this
+			el.classList.add('stretched')
+			setTimeout(function () { el.classList.remove('stretched') }, 1000)
+		})
 	} else {
-		el.classList.remove(cls)
+		stretchables[i].addEventListener('mouseenter', function () {
+			this.classList.add('stretched')
+		})
+		stretchables[i].addEventListener('mouseleave', function () {
+			this.classList.remove('stretched')
+		})
 	}
 }
 
-function activate() {
-	stretchables = document.getElementsByClassName("stretchable")
+// title stretch on page load
+var title = document.querySelector('.title')
+setTimeout(function () {
+	title.classList.add('stretched')
+	setTimeout(function () { title.classList.remove('stretched') }, 800)
+}, 250)
 
-	for (i=0; i < stretchables.length; i++) {
-		el = stretchables[i]
+/* LINK GLOW */
 
-		el.addEventListener("mouseenter", function(el) {
-			toggle(this, 'stretched')
-		});
+var glows = []
+var glowTarget = null
+var glowFrame = null
 
-		el.addEventListener("mouseleave", function(el) {
-			toggle(this, 'stretched')
-		});
+function updateGlow() {
+	if (!glowTarget) return
+	var rects = glowTarget.getClientRects()
+
+	while (glows.length < rects.length) {
+		var el = document.createElement('div')
+		el.className = 'link-glow'
+		document.body.appendChild(el)
+		glows.push(el)
 	}
+	while (glows.length > rects.length) {
+		glows.pop().remove()
+	}
+
+	// position each glow at its line's underline
+	var padL = parseFloat(getComputedStyle(glowTarget).paddingLeft) || 0
+	var padR = parseFloat(getComputedStyle(glowTarget).paddingRight) || 0
+	for (var i = 0; i < rects.length; i++) {
+		glows[i].style.left = (rects[i].left + window.scrollX + padL) + 'px'
+		glows[i].style.width = (rects[i].width - padL - padR) + 'px'
+		glows[i].style.top = (rects[i].bottom + window.scrollY) + 'px'
+	}
+
+	glowFrame = requestAnimationFrame(updateGlow)
 }
 
-
-function toggleTitle() {
-	title = document.querySelector('.title')
-	toggle(title, 'stretched')
-	setTimeout(()=>toggle(title, 'stretched'), 800)
+function startGlow(link) {
+	glowTarget = link
+	updateGlow()
 }
 
-function gridInit() {
-	let grid = Macy({
-		container: '#grid',
-		trueOrder: true,
-		margin: 20,
-		waitForImages: false,
-		columns: 2
-	})
+function stopGlow() {
+	glowTarget = null
+	cancelAnimationFrame(glowFrame)
+	for (var i = 0; i < glows.length; i++) {
+		glows[i].remove()
+	}
+	glows = []
 }
 
-window.addEventListener("turbolinks:load", function() {
-	console.log('turbolinks:load')
-  	setTimeout(()=>toggleTitle(), 250)
-  	setTimeout(()=>activate())
+// clean up stale glows on back-navigation
+window.addEventListener('pageshow', stopGlow)
+document.addEventListener('visibilitychange', stopGlow)
 
-  	if (document.querySelector('#grid')) {
-  		setTimeout(()=>gridInit()) 
-  	}
-})
+// attach to all interactive links
+var links = document.querySelectorAll('.bodyLink, .navLink')
+for (var i = 0; i < links.length; i++) {
+	links[i].addEventListener('mouseenter', function () { startGlow(this) })
+	links[i].addEventListener('mouseleave', stopGlow)
+}
