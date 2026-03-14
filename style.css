@@ -259,6 +259,7 @@ strong {
 	margin-left: calc(-1 * (var(--col-left-width) + var(--gutter)));
 	padding-right: var(--gutter);
 	text-align: right;
+	order: -1;
 }
 
 .col-left .venue-sub {
@@ -348,13 +349,24 @@ strong {
 		order: 3;
 	}
     
-	.project .col-right > div:first-child {
-		width: auto;
+	.project {
+		display: block;
+	}
+
+	.project .col-right {
+		display: inline;
+	}
+
+	.project .col-right > div {
+		display: inline;
 	}
 
 	.project .col-left {
-		order: 2;
-		padding-left: 0.25em;
+		display: inline;
+		width: auto;
+		margin-left: 0;
+		padding-right: 0;
+		text-align: left;
 	}
 
 	.award {
