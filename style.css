@@ -40,6 +40,13 @@
 	font-style: italic;
 }
 
+@font-face {
+	font-family: 'Satoshi';
+	src: url('fonts/Satoshi-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+
 .strange {
 	font-family: 'Bandeins Strange Variable', sans-serif;
 	font-weight: 600;
@@ -66,6 +73,10 @@
 .stretched .var {
 	font-variation-settings: "wdth" 880;
 	transition: font-variation-settings 1s ease;
+}
+
+::selection {
+	background: #fff176;
 }
 
 /* ================================================
@@ -104,6 +115,10 @@ img {
 
 strong {
 	font-weight: 500;
+}
+
+.item-authors strong {
+	font-weight: 700;
 }
 
 /* ================================================
@@ -269,6 +284,22 @@ strong {
 .col-right {
 	flex: 1;
 	min-width: 0;
+}
+
+.job-market-box {
+	padding: 0.75em 1em;
+	border: 1px solid var(--color-text);
+	background-color: rgba(0, 0, 0, 0.015);
+}
+
+.pub-heading {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+
+.pub-note {
+	font-size: 13px;
 }
 
 .item-authors {
