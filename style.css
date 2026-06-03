@@ -61,10 +61,6 @@
    STRETCH ANIMATION
    ================================================ */
 
-.stretchable {
-	cursor: pointer;
-}
-
 .stretchable .var {
 	font-variation-settings: "wdth" 0;
 	transition: font-variation-settings 1s ease;
